@@ -1,0 +1,15 @@
+[project]
+name = "ComfyUI_M3D_photo_effects"
+description = "A set of photo effects for ComfyUI"
+version = "1.0.0"
+license = { file = "LICENSE" }
+dependencies = ["Pillow", "numpy"]
+
+[project.urls]
+Repository = "https://github.com/metal3d/ComfyUI_M3D_photo_effects"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "metal3d"
+DisplayName = "ComfyUI_M3D_photo_effects"
+Icon = ""
