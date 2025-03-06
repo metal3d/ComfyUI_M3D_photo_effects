@@ -17,7 +17,7 @@ use these packages.
 This common effect is used in movies and photos to give a dramatic look. It is commonly used in war movies, but it can
 be used in any kind of movie or photo.
 
-![Bleach Bypass](./images/bleach_bypass.png)
+![Bleach Bypass](./images/bleach-bypass.png)
 
 - The slope makes contrast more dramatic (keep the value near 4.0)
 - the shadows offset should fix brightness (keep the value near 0.5)
