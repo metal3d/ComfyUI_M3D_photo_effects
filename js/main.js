@@ -3,7 +3,6 @@ import { app } from "../../scripts/app.js";
 class M3DDrawGraph {
   constructor(node) {
     this.node = node;
-    console.dir(node);
     // preare a div with a canvas inside. The canvas will be used to draw the curve,
     // the div (container) is used to center the canvas and ease the rescale.
     this.canvas = document.createElement("canvas");
@@ -153,7 +152,6 @@ class M3DDrawGraph {
 
 app.registerExtension({
   name: "m3d.photo.effects",
-  node: null,
   async setup() {
     // add m3d-flex-element css class on top
     document.head.innerHTML += `
