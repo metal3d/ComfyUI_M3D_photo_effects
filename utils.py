@@ -2,15 +2,18 @@ import numpy as np
 from PIL import Image, ImageEnhance
 
 
-def T(x, k=3.5, b=0.5):
+def tanh(x: np.ndarray | float, k=3.5, b=0.5):
+    """returns the parametric tanh function"""
     return np.tanh(k * (x - b))
 
 
-def Tnorm(x, k=3.5, b=0.5):
-    return (T(x, k, b) - T(0, k, b)) / (T(1, k, b) - T(0, k, b))
+def normalized_tanh(x: np.ndarray, k=3.5, b=0.5) -> np.ndarray:
+    """returns the normalized tanh function"""
+    return (tanh(x, k, b) - tanh(0, k, b)) / (tanh(1, k, b) - tanh(0, k, b))
 
 
-def overlay(im1: np.ndarray, im2: np.ndarray, factor=0.5):
+def overlay(im1: np.ndarray, im2: np.ndarray, factor=0.9):
+    """apply im1 (base) on top layer im2 with factor"""
     # must do:
     # 2 * a * b if a < 0.5
     # 1 - 2 * (1-a) * (1-b) either
@@ -22,17 +25,18 @@ def overlay(im1: np.ndarray, im2: np.ndarray, factor=0.5):
     return tmp * factor
 
 
-def bleach_bypass(im, k=3.5, b=0.5, desaturate=0.75, strength=1):
-    im = Image.fromarray((im * 255).astype(np.uint8))
+def bleach_bypass(im: np.ndarray, k=3.5, b=0.5, desaturate=0.75, strength=0.9):
+    """Apply bleach bypass effect on the image"""
+    imbase = Image.fromarray((im * 255).astype(np.uint8))
 
-    enhancer = ImageEnhance.Color(im)
-    imin = enhancer.enhance(1 - desaturate)
+    enhancer = ImageEnhance.Color(imbase)
+    base_image = enhancer.enhance(1 - desaturate)
 
-    imarr = np.asarray(imin) / 255.0
-    imarr = Tnorm(imarr, k, b)
+    base_arr = np.asarray(base_image) / 255.0
+    base_arr = normalized_tanh(base_arr, k, b)
 
     # balance the saturation as the "base" is very desaturated
-    tmp = enhancer.enhance(desaturate)
-    tmp = np.asarray(tmp) / 255.0
-    out = overlay(imarr, tmp, strength)
+    top_layer = enhancer.enhance(desaturate)
+    top_arr = np.asarray(top_layer) / 255.0
+    out = overlay(base_arr, top_arr, strength)
     return out
