@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI_M3D_photo_effects"
-description = "A set of photo effects for ComfyUI"
-version = "1.0.1"
+description = "A set of photo effects for ComfyUI, for the moment, only Bleach Bypass effect is provided, but more to come!"
+version = "1.0.2"
 license = { file = "LICENSE" }
 dependencies = ["Pillow", "numpy"]
 
@@ -11,5 +11,5 @@ Repository = "https://github.com/metal3d/ComfyUI_M3D_photo_effects"
 
 [tool.comfy]
 PublisherId = "metal3d"
-DisplayName = "ComfyUI_M3D_photo_effects"
+DisplayName = "M3D photo effects"
 Icon = ""
