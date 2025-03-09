@@ -2,7 +2,10 @@
 
 This repository provides some nodes to make photo effects.
 
-At this time, we only present the "Bleach Bypass" effect. But, keep in touch, we will add more effects soon.
+![Effects](images/effects.png)
+
+At this time, we only present the "Bleach Bypass" and "RGB Curve" effects.
+But, keep in touch, we will add more effects soon.
 
 ## Installation
 
@@ -26,3 +29,10 @@ be used in any kind of movie or photo.
 
 The displayed curve, below the values, shows the S-curve applied to the base before making the "overlay". It's highly
 experimental and the drawing of this curve is not perfect. But it gives an idea of what the effect will look like.
+
+## RGB Curve
+
+The RGB curve is a simple curve that can be used to adjust all the RGB channels at once.
+It is a simple curve that can be used to enforce shadows, midtones, and highlights.
+
+![RGB Curve](./images/rgb-curve.png)

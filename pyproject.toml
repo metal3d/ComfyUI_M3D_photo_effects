@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI_M3D_photo_effects"
-description = "A set of photo effects for ComfyUI, for the moment, only Bleach Bypass effect is provided, but more to come!"
-version = "1.0.2"
+description = "A set of photo effects for ComfyUI, like Bleach Bypass or RGB curve. More to come!"
+version = "1.1.0"
 license = { file = "LICENSE" }
 dependencies = ["Pillow", "numpy"]
 
