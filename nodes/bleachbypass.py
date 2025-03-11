@@ -9,8 +9,16 @@ class BleachBypass:
 
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("image",)
-    CATEGORY = "IMAGE"
+    CATEGORY = "M3D/image-effects/curve"
     FUNCTION = "apply_bleach_bypass"
+    DESCRIPTION = """Apply the "bleach bypass" effect to the input image.
+
+This effect is well-known in movies like "300",
+it enforces shadows and desaturates the image.
+To ensure a good result, keep the slope value between 2 and 5.
+If your image is overexposed, you can increase the shadow offset.
+At the opposite, if your image is underexposed, you can decrease the shadow offset.
+"""
 
     @classmethod
     def INPUT_TYPES(cls):

@@ -9,8 +9,13 @@ class RGBCurve:
 
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("image",)
-    CATEGORY = "IMAGE"
+    CATEGORY = "M3D/image-effects/curve"
     FUNCTION = "apply_curve"
+    DESCRIPTION = """Apply a RGB curve to the input image at once.
+
+This node apply a correction to the all channels of the image at once.
+It helps to enhance the contrast and the colors of the image.
+"""
 
     @classmethod
     def INPUT_TYPES(cle):
